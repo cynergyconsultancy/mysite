@@ -23,7 +23,7 @@
 
 Cynergy consultancy TemplateMo
 
-https://templatemo.com/tm-545-finance-business
+
 
 -->
 </head>
@@ -46,7 +46,7 @@ https://templatemo.com/tm-545-finance-business
       <div class="row">
         <div class="col-md-8 col-xs-12">
           <ul class="left-info">
-            <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-18:00</a></li>
+           <li><a href="#"><i class="fa fa-clock-o"></i>Mon-Fri 09:00-18:00</a></li>
             <li><a href="#"><i class="fa fa-phone"></i>+1-612-217-2427</a></li>
           </ul>
         </div>
@@ -54,7 +54,7 @@ https://templatemo.com/tm-545-finance-business
           <ul class="right-icons">
             <li><a href="#"><i class="fa fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="https://www.linkedin.com/company/cynergy-consultancy/"><i class="fa fa-linkedin"></i></a></li>
+             <li><a href="https://www.linkedin.com/company/cynergy-consultancy/"><i class="fa fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fa fa-behance"></i></a></li>
           </ul>
         </div>
@@ -478,7 +478,7 @@ https://templatemo.com/tm-545-finance-business
             <li><a rel="nofollow" href="https://fb.com/templatemo" target="_blank"><i class="fa fa-facebook"></i></a>
             </li>
             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+             <li><a href="https://www.linkedin.com/company/cynergy-consultancy/"><i class="fa fa-linkedin"></i></a></li>
             <li><a href="#"><i class="fa fa-behance"></i></a></li>
           </ul>
         </div>
@@ -517,7 +517,7 @@ https://templatemo.com/tm-545-finance-business
                 </div>
                 <div class="col-lg-12">
                   <fieldset>
-                    <button type="submit" id="form-submit" class="filled-button">Send Message</button>
+                    <button type="submit" id="form-submit" onclick="sendMail()" class="filled-button">Send Message</button>
                   </fieldset>
                 </div>
               </div>
@@ -558,7 +558,25 @@ https://templatemo.com/tm-545-finance-business
       }
     }
   </script>
-
+<script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+(function(){
+emailjs.init({
+publicKey: "Af9EK5Ggb1bZivzcp",
+});
+})();
+function sendMail(){
+let parms = {
+from_name : document.getElementById("name").value,
+email : document.getElementById("email").value,
+// subject : document.getElementById("subject").value,
+message : document.getElementById("message") . value,
+}
+emailjs.send("service_jvyx84g","template_t4er5hi",parms) . then(alert("email sent"))
+}
+</script>
 </body>
 
 </html>
